@@ -1,0 +1,107 @@
+<!-- <form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #espForm="ngForm"> -->
+
+    <div [hidden]="true">
+        <!-- <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required [(ngModel)]="idContrato">
+        </mat-form-field> -->
+    </div>
+
+    <div class="grupo">
+        <!-- <mat-form-field class="example-full-width">
+            <mat-select placeholder="Tipo Contrato" [(value)]="tipconSeleccionado"
+                (selectionChange)="onValidaTipCon($event)">
+                <mat-option *ngFor="let ltc of (ltipcon$ | async)" [value]="ltc.codigo">
+                    {{ltc.codigo}} {{ltc.descri}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="codigo contrato" required  [(ngModel)]="codcon" readonly>
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker" placeholder="fecha dd/mm/yyyy" [max]="maxFecha" 
+            [(ngModel)]="fechaSeleccionada">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <mat-select placeholder="Promotor" [(value)]="promotorSeleccionado"> -->
+                <!-- (selectionChange)="onValidaTipCon($event)"-->
+                <!-- <mat-option *ngFor="let lp of (lpromotor$ | async)" [value]="lp.idPromotor">
+                    {{lp.idPromotor}} {{lp.apepat}} {{lp.apemat}} {{lp.nombres}}
+                </mat-option>
+            </mat-select>
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="inscripción" required [(ngModel)]="inscripcion">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="mto total" required [(ngModel)]="mtotot">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="cuota" required [(ngModel)]="cuota">
+        </mat-form-field>
+
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="num cuotas" required [(ngModel)]="numcuotas">
+        </mat-form-field> -->
+    </div>
+    <div class="grupo">
+        <!-- <mat-form-field>
+            <input matInput placeholder="dni" required [(ngModel)]="dni">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="apepat" required [(ngModel)]="apepat">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="apemat" required [(ngModel)]="apemat">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="nombres" required [(ngModel)]="nombres">
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="direccion" required [(ngModel)]="direccion">
+        </mat-form-field>
+
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker1" placeholder="fec. Nac. dd/mm/yyyy" [max]="maxFecha" 
+            [(ngModel)]="fecnacSeleccionada">
+            <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+        
+        <mat-form-field>
+            <input matInput placeholder="telefono" required [(ngModel)]="telefono">
+        </mat-form-field> -->
+
+        <button mat-raised-button color="primary" (click)="agregarDetalle()">Agregar Detalle</button>
+
+        <!-- <mat-expansion-panel *ngFor="let d of detitecon; let i=index">
+            <mat-expansion-panel-header>
+                <mat-panel-title>
+                    {{ i + 1 }} {{d.socio.dni}} {{d.socio.apepat}} {{d.socio.apemat}}, {{d.socio.nombres}} {{d.socio.fecnac}} {{d.socio.direccion}}
+                </mat-panel-title>
+                <button mat-raised-button color="warn" (click)="removerDetalle(i)">Remover</button>
+            </mat-expansion-panel-header>
+        </mat-expansion-panel> -->
+    </div>
+
+    <div class="grupo">
+        <button mat-raised-button color="primary" (click)="aceptar()" [disabled]="estadoBotonRegistrar()">
+            <mat-icon>done</mat-icon>
+            <span>Aceptar</span>
+        </button>
+        <button mat-raised-button color="accent" routerLink='/especialidad' type="button">
+            <mat-icon>close</mat-icon>
+            <span>Cancelar</span>
+        </button>
+    </div>
+<!-- </form> -->
+
+<br />

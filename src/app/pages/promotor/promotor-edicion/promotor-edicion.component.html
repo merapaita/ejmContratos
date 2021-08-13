@@ -1,0 +1,36 @@
+ <form class="example-container" [formGroup]="form" (ngSubmit)="operar()" #frmPromotor="ngForm">
+    <div [hidden]="true">
+        <!-- <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field> -->
+    </div>
+
+    <!-- <mat-form-field class="example-full-width">
+        <input matInput placeholder="DNI" required formControlName="dni">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="A. Paterno" required formControlName="apepat">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="A. Materno" required formControlName="apemat">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Nombres" required formControlName="nombres">
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Direccion" required formControlName="direccion">
+    </mat-form-field> -->
+
+    <button mat-raised-button color="primary" type="submit" [disabled]="frmPromotor.invalid">
+        <!-- <mat-icon>done</mat-icon> -->
+        <span>Aceptar</span>
+    </button>
+    <button mat-raised-button color="accent" routerLink='/promotor' type="button">
+        <!-- <mat-icon>close</mat-icon> -->
+        <span>Cancelar</span>
+    </button>
+</form>

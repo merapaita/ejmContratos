@@ -1,0 +1,53 @@
+<mat-toolbar>Promotor</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<div [hidden]="route.children.length !== 0">
+    <div class="example-container mat-elevation-z8">
+        <div class="example-header">
+            <mat-form-field>
+                <input matInput (keyup)="filtrar($event)" placeholder="Buscar especialidad">
+            </mat-form-field>
+        </div>
+        <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="idPromotor">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.idPromotor}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="dni">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> DNI </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.dni}} </mat-cell>
+                <!-- <input matInput type="text" [value]="element.nombres" >-->
+            </ng-container>
+            <ng-container matColumnDef="apepat">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Apellido Paterno </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.apepat}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="apemat">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Apellido Materno </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.apemat}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="nombres">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Nombres </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.nombres}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="acciones">
+                <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <button mat-button color="primary" [routerLink]="['edicion', row.idPromotor]">
+                        <mat-icon>ballot</mat-icon>
+                    </button>
+                    <button mat-button color="accent" (click)="eliminar(row)">
+                        <mat-icon>delete</mat-icon>
+                    </button>
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+</div>
+<button mat-fab color="accent" style="float: right" routerLink="/promotor/nuevo">
+    <mat-icon>add</mat-icon>
+</button>

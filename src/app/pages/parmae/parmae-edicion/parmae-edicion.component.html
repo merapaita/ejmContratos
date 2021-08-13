@@ -1,0 +1,32 @@
+<form class="example-container"  (ngSubmit)="operar()" #frmParmae="ngForm">     <!--[formGroup]="form"-->
+    <div [hidden]="true">
+        <!-- <mat-form-field class="example-full-width">
+            <input matInput placeholder="ID" required formControlName="id">
+        </mat-form-field> -->
+    </div>
+
+    <div class="grupo">
+        <!-- <mat-form-field class="example-full-width">
+            <input matInput placeholder="Tipo" required formControlName="tipo">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Codigo" required formControlName="codigo">
+        </mat-form-field>
+    
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Descripcion" required formControlName="descri">
+        </mat-form-field> -->
+    </div>
+
+    <div class="grupo">
+        <button mat-raised-button color="primary" type="submit" [disabled]="frmParmae.invalid">
+            <!-- <mat-icon>done</mat-icon> -->
+            <span>Aceptar</span>
+        </button>
+        <button mat-raised-button color="accent" routerLink='/parmae' type="button">
+            <!-- <mat-icon>close</mat-icon> -->
+            <span>Cancelar</span>
+        </button>
+    </div>
+</form>

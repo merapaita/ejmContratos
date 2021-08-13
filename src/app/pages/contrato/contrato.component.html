@@ -1,0 +1,49 @@
+<mat-toolbar>Contratos</mat-toolbar>
+
+<router-outlet></router-outlet>
+
+<div [hidden]="route.children.length !== 0">
+    <div class="example-container mat-elevation-z8">
+        <div class="example-header">
+            <mat-form-field>
+                <input matInput (keyup)="filtrar($event)" placeholder="Buscar contrato">
+            </mat-form-field>
+        </div>
+        <mat-table [dataSource]="dataSource" matSort>
+            <ng-container matColumnDef="idContrato">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> ID </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.idContrato}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="tipcon">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Tipo de Contrato </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.tipcon}} </mat-cell>
+                <!-- <input matInput type="text" [value]="element.nombres" >-->
+            </ng-container>
+            <ng-container matColumnDef="codcon">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Codigo </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.codcon}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="fecha">
+                <mat-header-cell *matHeaderCellDef mat-sort-header> Fecha </mat-header-cell>
+                <mat-cell *matCellDef="let row"> {{row.fecha}} </mat-cell>
+            </ng-container>
+            <ng-container matColumnDef="acciones">
+                <mat-header-cell *matHeaderCellDef> Acciones </mat-header-cell>
+                <mat-cell *matCellDef="let row">
+                    <!-- <button mat-button color="primary" [routerLink]="['edicion', row.idPromotor]">
+                        <mat-icon>ballot</mat-icon>
+                    </button> -->
+                    <!-- <button mat-button color="accent" (click)="eliminar(row)">
+                        <mat-icon>delete</mat-icon>
+                    </button> -->
+                </mat-cell>
+            </ng-container>
+            <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+            <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]"></mat-paginator>
+    </div>
+    <button mat-fab color="accent" style="float: right" routerLink="/contrato/nuevo">
+        <mat-icon>add</mat-icon>
+    </button>
+</div>
